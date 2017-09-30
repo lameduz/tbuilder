@@ -1,0 +1,29 @@
+web:
+  build: docker/web
+  ports:
+    - "8080:80"
+  volumes:
+    - ./:/var/www/html/
+  links:
+    - db
+db:
+  build: docker/mysql
+  volumes:
+         - db:/var/lib/mysql:rw
+  restart: always
+  ports:
+    - 3306
+  environment:
+    MYSQL_ROOT_PASSWORD: kookli12
+    MYSQL_DATABASE: sf_testflix
+    MYSQL_USER: root
+    MYSQL_PASSWORD: kookli12
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  links:
+    - db
+  ports:
+    - 8181:80
+  environment:
+    MYSQL_USERNAME: root
+    MYSQL_ROOT_PASSWORD: kookli12
