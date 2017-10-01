@@ -8,7 +8,7 @@ web:
     - ./docker/config/sites-available:/etc/apache2/sites-enabled
     - ./docker/config/php.ini:/usr/local/etc/php/php.ini
   links:
-    - db
+    - db:db
 db:
   build: docker/mysql
   volumes:
@@ -26,7 +26,7 @@ db:
 phpmyadmin:
   image: phpmyadmin/phpmyadmin
   links:
-    - db
+    - db:db
   ports:
     - 8181:80
   environment:
