@@ -4,18 +4,23 @@ web:
     - "8080:80"
   volumes:
     - ./:/var/www/html/
+    - ./app:/var/www/html
+    - ./docker/config/sites-available:/etc/apache2/sites-enabled
+    - ./docker/config/php.ini:/usr/local/etc/php/php.ini
   links:
     - db
 db:
   build: docker/mysql
   volumes:
          - db:/var/lib/mysql:rw
+         - ./db:/var/lib/mysql:rw
   restart: always
   ports:
     - 3306
   environment:
     MYSQL_ROOT_PASSWORD: kookli12
     MYSQL_DATABASE: sf_testflix
+    MYSQL_DATABASE: teambuilder
     MYSQL_USER: root
     MYSQL_PASSWORD: kookli12
 phpmyadmin:
