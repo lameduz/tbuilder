@@ -8,6 +8,7 @@ RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
 && rm -f /tmp/composer-setup.*
 
 RUN apt-get update && apt-get install -y \
+        zlib1g zlib1g-dbg zlib1g-dev zlibc \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
@@ -15,4 +16,11 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) iconv mcrypt \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd
+RUN docker-php-ext-install zip
+RUN apt-get install -y git
+RUN a2enmod rewrite
+RUN chmod o+w /var/www/
+
+
+
 
