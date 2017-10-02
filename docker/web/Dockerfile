@@ -23,3 +23,4 @@ RUN a2enmod rewrite
 RUN chmod o+w /var/www/
 RUN chmod +x /usr/local/bin/composer
 RUN pwd
+RUN apt-get install -y emacs

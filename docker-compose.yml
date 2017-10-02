@@ -3,7 +3,6 @@ web:
   ports:
     - "8080:80"
   volumes:
-    - ./:/var/www/html/
     - ./app:/var/www/html
     - ./docker/config/sites-available:/etc/apache2/sites-enabled
     - ./docker/config/php.ini:/usr/local/etc/php/php.ini
