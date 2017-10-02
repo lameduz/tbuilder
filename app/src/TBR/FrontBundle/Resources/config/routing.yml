@@ -1,0 +1,44 @@
+
+list:
+    path:     /list
+    defaults: { _controller: FrontBundle:Room:list }
+
+show:
+    path:     /show
+    defaults: { _controller: FrontBundle:Room:show }
+
+edit:
+    path:     /edit
+    defaults: { _controller: FrontBundle:Room:edit }
+
+list:
+    path:     /list
+    defaults: { _controller: FrontBundle:Room:list }
+
+show:
+    path:     /show
+    defaults: { _controller: FrontBundle:Room:show }
+
+edit:
+    path:     /edit
+    defaults: { _controller: FrontBundle:Room:edit }
+
+update:
+    path:     /update
+    defaults: { _controller: FrontBundle:Room:update }
+
+list:
+    path:     /rooms
+    defaults: { _controller: FrontBundle:Room:list }
+
+show:
+    path:     /room
+    defaults: { _controller: FrontBundle:Room:show }
+
+edit:
+    path:     /room/edit
+    defaults: { _controller: FrontBundle:Room:edit }
+
+delete:
+    path:     /room/delete
+    defaults: { _controller: FrontBundle:Room:delete }
