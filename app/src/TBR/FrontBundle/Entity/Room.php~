@@ -252,28 +252,4 @@ class Room
     {
         return $this->discordLink;
     }
-
-    /**
-     * Set profile
-     *
-     * @param \UserBundle\Entity\Profile $profile
-     *
-     * @return Room
-     */
-    public function setProfile(\UserBundle\Entity\Profile $profile)
-    {
-        $this->profile = $profile;
-
-        return $this;
-    }
-
-    /**
-     * Get profile
-     *
-     * @return \UserBundle\Entity\Profile
-     */
-    public function getProfile()
-    {
-        return $this->profile;
-    }
 }

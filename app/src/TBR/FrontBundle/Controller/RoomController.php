@@ -6,6 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class RoomController extends Controller
 {
+
+    public function newAction()
+    {
+
+    }
     public function listAction()
     {
         return $this->render('FrontBundle:Room:list.html.twig', array(
